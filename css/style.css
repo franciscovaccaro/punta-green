@@ -64,6 +64,10 @@ body {
     justify-content: flex-end;
 }
 
+.menu-container .navbar-collapse .nav-item {
+    margin-left: 20px;
+}
+
 .menu-container .nav-link {
     font-size: .8rem;
     color: #09525f;
@@ -105,12 +109,13 @@ body {
 }
 
 .landing-grid h2 {
-    font-size: 7rem;
+    font-size: 6rem;
     font-weight: 700;
     color: #09525f;
+    min-height: 96px;
 }
 
-.landing-grid h2 span {
+.landing-grid .highlighted {
     color: #afc32e;
 }
 
@@ -118,6 +123,7 @@ body {
     font-size: 2rem;
     font-weight: 600;
     margin-top: 1.5rem;
+    max-width: 400px;
 }
 
 .text-block {
@@ -128,12 +134,31 @@ body {
     justify-content: center;
     align-content: center;
     align-items: center;
-    padding: 2.5rem;
+    padding: 1rem;
+}
+
+.background_mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .slider-block {
     grid-column: 3 / 6;
     grid-row: 2 / 5;
+}
+
+.landing-slider div {
+    background-size: cover;
+    height: 90vh;
+}
+
+.landing-slider div:nth-child(1) {
+    background-image: url('../img/slider-landing1.jpg');
+}
+
+.landing-slider div:nth-child(2) {
+    background-image: url('../img/slider-landing3.jpg');
 }
 
 .green-block {
@@ -159,7 +184,7 @@ body {
 
 .btn {
     border: 1px solid transparent;
-    font-weight: 700;
+    font-weight: 600;
     padding: .8rem;
     border-radius: 2rem;
     transition: .5s ease-in-out;
@@ -189,7 +214,7 @@ body {
     border: 1px solid #128c7e;
 }
 
-#departamentos, #amenities, #location {
+#departamentos, #amenities {
     max-width: 1680px;
     margin: 0 auto;
     padding: 0 1rem;
@@ -223,7 +248,7 @@ body {
     font-size: 1rem;
     line-height: 130%;
     max-width: 1000px;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .dpto-grid {
@@ -297,6 +322,10 @@ body {
     line-height: 130%;
 }
 
+#servicios {
+    margin-bottom: 2.3rem;
+}
+
 .servicios-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -324,6 +353,10 @@ body {
     padding: 1.5rem 1rem;
     font-size: .9rem;
     line-height: 135%;
+}
+
+#amenities {
+    margin-bottom: 4rem;
 }
 
 .amenities-container {
@@ -356,6 +389,16 @@ ul.amenities-list li::before {
     transform: translateX(-27px);
 }
 
+#location {
+    background-color: #09525f;
+    color: white;
+}
+
+#map {
+    width: 100%;
+    height: 600px;
+}
+
 .location-text {
     flex-direction: row;
 }
@@ -369,9 +412,13 @@ ul.amenities-list li::before {
     width: 50%;
 }
 
+.location-text h3 {
+    color: #fff;
+}
+
 .location-text .adress {
-    color: #09525f;
-    font-weight: 700;
+    color: #fff;
+    font-weight: 400;
     font-size: 1.2rem;
 }
 
@@ -384,6 +431,8 @@ ul.amenities-list li::before {
 .contact-image {
     grid-column: 1 / 11;
     grid-row: 1 / 3;
+    background: url('../img/contacto-img.jpg') center center no-repeat;
+    background-size: cover;
 }
 
 .contact-form {
@@ -391,6 +440,10 @@ ul.amenities-list li::before {
     grid-row: 2 / 4;
     padding: 2rem;
     background-color: #afc32e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 606px;
 }
 
 .form-title {
@@ -416,13 +469,32 @@ ul.amenities-list li::before {
     border: 2px solid transparent;
     padding: .5rem 1.5rem;
     border-radius: 3px;
+    color: #fefefe
 }
 
 .contact-form .btn:hover {
-    background-color: #f3f3f3;
+    background-color: #fefefe;
     border: 2px solid #09525f;
     color: #09525f;
+}
 
+.form-msg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-msg img {
+    max-width: 150px;
+    margin-bottom: 1rem;
+}
+
+.form-msg p {
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 .footer {
@@ -437,10 +509,27 @@ ul.amenities-list li::before {
 }
 
 .hidden {
-    opacity:0;
+    opacity: 0;
 }
+
 .visible {
-    opacity:1;
+    opacity: 1;
+}
+
+.back-to-top {
+    background: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+.back-to-top i {
+    background-color: #afc32e;
+    color: white;
+    border: 1px solid transparent;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 2rem;
 }
 
 @media (max-width: 1024px) {
@@ -449,9 +538,11 @@ ul.amenities-list li::before {
     }
     .landing-grid h2 {
         font-size: 5rem;
+        min-height: 80px;
     }
     .landing-grid h1 {
         font-size: 1.2rem;
+        max-width: 265px;
     }
     .landing-grid .button-wrapper .btn {
         font-size: .7rem;
@@ -459,8 +550,19 @@ ul.amenities-list li::before {
 }
 
 @media (max-width: 768px) {
+    .navbar-nav {
+        align-items: center;
+    }
+    .landing-grid h1 {
+        text-align: center;
+    }
+    .navbar-nav .nav-link {
+        padding: .5rem 1rem;
+        text-align: center;
+    }
     .landing-grid h2 {
-        font-size: 4rem;
+        font-size: 3.5rem;
+        min-height: 56px;
     }
     .landing-grid h1 {
         margin-top: 1rem;
@@ -504,16 +606,6 @@ ul.amenities-list li::before {
     .menu-container {
         padding: 0;
     }
-
-    .navbar-nav {
-        align-items: center;
-    }
-
-    .navbar-nav .nav-link {
-        padding: .5rem 1rem;
-        text-align: center;
-    }
-
     #departamentos, #amenities, #location {
         padding: 0;
     }
@@ -522,11 +614,15 @@ ul.amenities-list li::before {
         z-index: 2;
         min-height: 90vh;
     }
+    .background_mobile {
+        background-color: rgba(255, 255, 255, .9);
+        min-width: 313px;
+        padding: 1rem;
+    }
     .slider-block {
         grid-column: 1 / 6;
         grid-row: 2 / 5;
         z-index: 1;
-        opacity: .5;
     }
     .green-block {
         display: none;
@@ -557,7 +653,7 @@ ul.amenities-list li::before {
     }
     .amenities-text {
         font-size: .9rem;
-        padding: 1rem;
+        padding: 0 1rem 0 2rem;
     }
     ul.amenities-list li {
         padding-left: 0;
@@ -572,6 +668,10 @@ ul.amenities-list li::before {
     .location-text div:last-child {
         margin-top: 1rem;
     }
+    #map {
+        width: 100%;
+        height: 300px;
+    }
     .contact-grid {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(2, auto);
@@ -579,6 +679,7 @@ ul.amenities-list li::before {
     .contact-image {
         grid-column: 1;
         grid-row: 2;
+        height: 300px;
     }
     .contact-form {
         grid-column: 1;

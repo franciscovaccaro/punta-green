@@ -29,6 +29,8 @@ $(document).ready(function () {
     arrows: false,
     centerPadding: '100px',
     slidesToShow: 3,
+    autoplay: true,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 768,
@@ -50,8 +52,24 @@ $(document).ready(function () {
       }
     ]
   });
-});
 
+  $('#departamentos').addClass("hidden").viewportChecker({
+    classToAdd: 'visible animated fadeInUp',
+    offset: 300
+  });
+  $('#servicios').addClass("hidden").viewportChecker({
+    classToAdd: 'visible animated fadeInUp',
+    offset: 300
+  });
+  $('#amenities').addClass("hidden").viewportChecker({
+    classToAdd: 'visible animated fadeInUp',
+    offset: 300
+  });
+  $('.contact-form').addClass("hidden").viewportChecker({
+    classToAdd: 'visible animated bounceInRight',
+    offset: 300
+  });
+});
 
 $(".hamburger").on("click", function (e) {
   $hamburger.toggleClass("is-active");
@@ -73,19 +91,42 @@ $(function () {
   });
 });
 
-$(document).ready(function () {
-  $('#departamentos').addClass("hidden").viewportChecker({
-    classToAdd: 'visible animated fadeInUp',
-    offset: 100
-  });
-  $('#servicios').addClass("hidden").viewportChecker({
-    classToAdd: 'visible animated fadeInUp',
-    offset: 100
-  });
-  $('.contact-form').addClass("hidden").viewportChecker({
-    classToAdd: 'visible animated bounceInRight',
-    offset: 100
+$(function () {
+  $('.cta-button').on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({
+      scrollTop: $($(e.target).attr("href")).offset().top - 50
+    }, 1000);
   });
 });
 
+$(document).ready(function () {
+  var offset = 500;
+  var duration = 700;
 
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > offset) {
+      $('.back-to-top').fadeIn(duration);
+    } else {
+      $('.back-to-top').fadeOut(duration);
+    }
+  });
+
+  $('.back-to-top').click(function (event) {
+    event.preventDefault();
+    $('html, body').animate({scrollTop: 0}, duration);
+    return false; 
+  })
+});
+
+$(document).ready(function() {
+  var options = {
+      stringsElement: '#typed-strings',
+      typeSpeed: 100,
+      backSpeed: 100,
+      loop: true,
+      showCursor: false
+  }
+
+  var typed = new Typed("#typed", options);
+});

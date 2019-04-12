@@ -7,7 +7,7 @@ $phone=$_POST['phone'];
 $message=$_POST['message'];
 
 $to = "franciscovsk@gmail.com";
-$subject = "Contact Form Test";
+$subject = "Nuevo Contacto - Punta Green";
 $message = " Nombre: " . $name . "\r\n Email: " . $email . "\r\n Teléfono: " . $phone . "\r\n Mensaje: " . $message;
 
 
@@ -22,7 +22,5 @@ if(@mail($to,$subject,$message,$headers))
 }else{
   echo "Error! Please try again.";
 }
-
-
 
 ?>
