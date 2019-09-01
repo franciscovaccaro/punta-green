@@ -14,18 +14,17 @@ use FormGuide\Handlx\FormHandler;
 $pp = new FormHandler(); 
 
 $validator = $pp->getValidator();
-$validator->fields(['name','email'])->areRequired()->maxLength(50);
-$validator->fields(['phone'])->areRequired()->maxLength(20);
-$validator->field('email')->isEmail();
-$validator->field('arrivalDate');
-$validator->field('leaveDate');
-$validator->field('guests');
-$validator->field('message')->maxLength(600);
+$validator->fields(['Nombre','Email'])->areRequired()->maxLength(50);
+$validator->fields(['Telefono'])->areRequired()->maxLength(20);
+$validator->field('Email')->isEmail();
+$validator->field('Llegada');
+$validator->field('Salida');
+$validator->field('Huespedes');
+$validator->field('Mensaje')->maxLength(600);
 
 
 
 
-// $pp->sendEmailTo('info@puntagreen.net'); // ← Your email here
-$pp->sendEmailTo('franciscovsk@gmail.com');
+$pp->sendEmailTo('info@puntagreen.net'); // ← Your email here
 
 echo $pp->process($_POST);
