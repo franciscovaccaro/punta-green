@@ -17,11 +17,15 @@ $validator = $pp->getValidator();
 $validator->fields(['name','email'])->areRequired()->maxLength(50);
 $validator->fields(['phone'])->areRequired()->maxLength(20);
 $validator->field('email')->isEmail();
+$validator->field('arrivalDate');
+$validator->field('leaveDate');
+$validator->field('guests');
 $validator->field('message')->maxLength(600);
 
 
 
 
-$pp->sendEmailTo('info@puntagreen.net'); // ← Your email here
+// $pp->sendEmailTo('info@puntagreen.net'); // ← Your email here
+$pp->sendEmailTo('franciscovsk@gmail.com');
 
 echo $pp->process($_POST);

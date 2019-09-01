@@ -57,7 +57,7 @@ body {
 }
 
 .menu-container .navbar-brand img {
-    width: 170px;
+    width: 130px;
 }
 
 .menu-container .navbar-collapse {
@@ -76,7 +76,7 @@ body {
 
 .nav-link.green {
     background-color: #afc32e;
-    border-radius: 2rem;
+    border-radius: 3px;
     color: white;
 }
 
@@ -158,6 +158,10 @@ body {
 }
 
 .landing-slider div:nth-child(2) {
+    background-image: url('../img/slider-landing2.jpg');
+}
+
+.landing-slider div:nth-child(3) {
     background-image: url('../img/slider-landing3.jpg');
 }
 
@@ -186,7 +190,7 @@ body {
     border: 1px solid transparent;
     font-weight: 600;
     padding: .8rem;
-    border-radius: 2rem;
+    border-radius: 3px;
     transition: .5s ease-in-out;
 }
 
@@ -451,11 +455,19 @@ ul.amenities-list li::before {
     color: black;
     line-height: 130%;
     font-weight: 600;
-    margin-bottom: .7rem;
+    margin-bottom: 1.2rem;
 }
 
 .contact-form label {
-    margin-bottom: .7rem;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.contact-form input:hover, .contact-form input:focus, .contact-form textarea:hover, .contact-form textarea:focus, select:hover, select:focus {
+    border: 1px solid #09525f;
+    -webkit-box-shadow: 2px 2px 21px 0px rgba(9, 82, 95, 0.39);
+    -moz-box-shadow: 2px 2px 21px 0px rgba(9, 82, 95, 0.39);
+    box-shadow: 2px 2px 21px 0px rgba(9, 82, 95, 0.39);
 }
 
 .contact-form textarea {
@@ -684,5 +696,6 @@ ul.amenities-list li::before {
     .contact-form {
         grid-column: 1;
         grid-row: 1;
+        padding: 2rem 1rem;
     }
 }
