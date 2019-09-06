@@ -191,7 +191,7 @@ body {
     font-weight: 600;
     padding: .8rem;
     border-radius: 3px;
-    transition: .5s ease-in-out;
+    transition: .3s ease-in-out;
 }
 
 .cta-button {
@@ -203,7 +203,7 @@ body {
     background-color: white;
     border: 1px solid #afc32e;
     color: black;
-    transition: .5s ease-in-out;
+    transition: .3s ease-in-out;
 }
 
 .wp-button {
@@ -383,10 +383,10 @@ ul.amenities-list li {
 }
 
 ul.amenities-list li::before {
-    content: 'chevron_right';
-    font-family: 'Material Icons';
+    content: '\f054';
+    font-family: 'Font Awesome 5 Free';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 900;
     font-size: 24px;
     color: #afc32e;
     position: absolute;
@@ -463,6 +463,10 @@ ul.amenities-list li::before {
     font-size: 14px;
 }
 
+input, select {
+    outline-width: 0;
+}
+
 .contact-form input:hover, .contact-form input:focus, .contact-form textarea:hover, .contact-form textarea:focus, select:hover, select:focus {
     border: 1px solid #09525f;
     -webkit-box-shadow: 2px 2px 21px 0px rgba(9, 82, 95, 0.39);
@@ -510,14 +514,68 @@ ul.amenities-list li::before {
 }
 
 .footer {
+    background-color: #040F16;
+}
+
+.info-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    padding: 2rem 15px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.info-container a {
+    display: block;
+    color: white;
+    margin: 10px 0;
+    font-size: 1.3em;
+    transition: .3s ease-in-out;
+}
+
+.info-container a:hover, .info-container a:focus {
+    transition: .3s ease-in-out;
+    color: #afc32e;
+    text-decoration: none;
+}
+
+.social-media {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-content: center;
+    justify-content: flex-end;
+}
+
+.social-media a {
+    margin: 10px 7px;
+    padding: 10px 12px;
+    font-size: 2em;
+    background: white;
+    color: #040F16;
+    border-radius: 50%;
+    transition: .3s ease-in-out;
+}
+
+.social-media a:nth-child(1) {
+    padding: 10px 16px;
+}
+
+.social-media a:hover, .social-media a:focus {
+    transition: .3s ease-in-out;
+    background: #afc32e;
+    color: white;
+}
+
+.copyright {
     font-size: .7em;
     padding: 1rem 0;
     background-color: #09525f;
     color: white;
+}
+
+.copyright p {
+    text-align: center;
 }
 
 .hidden {
@@ -539,9 +597,15 @@ ul.amenities-list li::before {
     background-color: #afc32e;
     color: white;
     border: 1px solid transparent;
-    padding: 10px;
-    border-radius: 30px;
-    font-size: 2rem;
+    padding: 10px 11px;
+    border-radius: 50%;
+    font-size: 1.9rem;
+    transition: .3s ease-in-out;
+}
+
+.back-to-top i:hover{
+    background-color: #09525f;
+    transition: .3s ease-in-out;
 }
 
 @media (max-width: 1024px) {
@@ -697,5 +761,18 @@ ul.amenities-list li::before {
         grid-column: 1;
         grid-row: 1;
         padding: 2rem 1rem;
+    }
+
+    .info-container {
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .social-media {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 20px;
     }
 }
